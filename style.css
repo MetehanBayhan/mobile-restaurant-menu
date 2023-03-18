@@ -1,0 +1,239 @@
+body {
+    margin: 0;
+    font-family: 'Smythe', sans-serif;
+    font-size: 22px;
+    background-color: #d2d2d2;
+}
+
+header{
+    margin: auto;
+    height: 170px;
+    width: 700px;
+    background: url('https://images.unsplash.com/photo-1616645500344-209060c84970?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0px -200px;
+}
+
+/* Layouts */
+
+
+.container {
+    margin: auto;
+    width: 700px;
+    background-color: white; 
+}
+
+.order-box {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    width: 610px;
+    border-bottom: 1px solid #d2d2d2;
+    justify-content: space-between;
+    padding: 40px 0px;
+
+}
+
+.item-info {
+    width: 65%;
+}
+
+.item-logo {
+    font-size: 90px;
+    margin: 0;
+    padding-left: 10px;
+    opacity: 0.72;
+}
+
+.ingredients {
+    color: #8B8B8B;
+}
+
+.shopping-cart {
+    display: flex;
+    width: 600px;
+    margin: 15px auto;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.total-price {
+    border-top: 2px solid black;
+    padding-top: 15px;
+    display: flex;
+    width: 600px;
+    margin: auto;
+}
+
+
+.complete-order-btn-wrapper {
+    text-align: center;
+    padding: 45px;
+}
+
+.total-order-wrapper {
+    height: 100%;
+    width: 700px;
+}
+
+.total-order-section {
+    padding-top: 35px;
+}
+
+.greetings {
+    width: 500px;
+    height: 120px;
+    background-color: #ecfdf5;
+    color: #065F46;
+    text-align: center;
+    margin: auto;
+
+}
+
+.greetings-wrapper {
+    padding-bottom: 50px;
+}
+
+
+/* Typography */
+
+header h1, header h3 {
+    color: white;
+}
+
+h1, h3{
+    margin: 0;
+    padding-left: 45px;
+}
+
+h2, h4{
+    margin: 0;
+}
+
+h1{
+    padding-top: 30px;
+    margin-bottom: 6px;
+}
+
+.item-info p {
+    margin: 10px 0 15px 0;
+    
+}
+
+.total-price h3, .shopping-cart h3 {
+    margin-left: auto;
+}
+
+.your-order-title {
+    text-align: center;
+
+}
+
+.payment-form h1 {
+    margin: 10px 0;
+    padding: 0;
+
+}
+
+.greetings h2{
+    padding: 25px;
+}
+
+
+
+
+/* Button and inputs */
+
+.add-btn {
+    border-radius: 50%;
+    border: 1px solid #d2d2d2;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 32px;
+    line-height: 24px;
+    color: #3c3c3c;
+}
+
+.complete-order-btn {
+    background: #16DB99;
+    color: white;
+    width: 90%;
+    height: 60px;
+    width: 100%;
+    border: 0;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.remove-btn {
+    font-size: 16px;
+    color: #999;
+}
+
+
+/* Form layout */
+
+.payment-form {
+    background-color: white;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    box-shadow: 0px 0px 45px 15px #999;
+    text-align: center;
+    border-radius: 4px;
+    padding: 25px;
+}
+
+.payment-form-el {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+}
+
+input[type=text],
+input[type=password],
+input[type=number] {
+    width: 400px;
+    height: 50px;
+    border-radius: 4px;
+    border: 2px solid #757575;
+    padding: 15px 25px;
+    margin: 10px 0;
+    font-size: 24px;
+}
+
+.pay-btn {
+    width: 452px;
+    height: 80px;
+    border: 0;
+    background-color: #16DB99;
+    border-radius: 4px;
+    margin: 25px 0;
+    font-size: 20px;
+    color: white;
+    font-weight: 700;
+}
+
+
+/* utility class */
+
+.hidden {
+    visibility: hidden;
+}
+
+.none {
+    display: none;
+}
