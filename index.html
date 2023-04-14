@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Mobile Menu App</title>
         <link rel="stylesheet" href="style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -8,24 +9,22 @@
         <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
     </head>
     <body>
-        <header>
-            <h1>Metehan's dinner</h1>
-            <h3>The best burgers and pizzas in town.</h3>
+        <header class="header container">
+            <div class="bg-img"></div>
+            <h1 class="header-title">Jimmy's Dinner</h1>
+            <h2 class="header-subtitle">The best burgers and pizzas in town</h2>
         </header>
-        <main id="feed-html-wrapper">
+        <div class="feed container">
             
-            
-            
-        </main>
-            <div class="payment-form none" id="payment-form">
-                <h1>Enter Card Details</h1>
-                <form class="payment-form-el">
-                    <input type="text" id="username" name="username" placeholder="Enter Your Name" required>
-                    <input type="text" id="cart-number" name="cart-number" placeholder="Enter Card Number" required>
-                    <input type="password" id="cvv" name="cvv" placeholder="Enter Cvv" required>
-                    <button class="pay-btn" id="pay-btn" type="submit">Pay</button>
-                </form>
+        </div>
+        <div class="order container">
+            <h2 class="shopping-cart-title">Your order</h2>
+            <div class="shopping-cart">
+                
             </div>
+            <button class="complete-order-btn">complete order</button>
+        </div>
+
         <script src="index.js" type="module"></script>
     </body>
 </html>
