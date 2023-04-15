@@ -8,6 +8,7 @@ html, body {
 }
 body {
     font-size: 1rem;
+    font-family: "Smythe", sans-serif;
     background-color: #c4c4c4;
 }
 
@@ -15,15 +16,16 @@ body {
     background-color: mediumseagreen;
     width: 100vw;
     max-width: 450px;
-    margin: auto;
+    margin: 0 auto;
     padding: 0px 2em;
     background-color: #F5F5F5;
 }
 
 .page-wrapper {
     height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
-
 /* TYPOGRAPHY */
 
 h1 {
@@ -34,10 +36,26 @@ h1 {
     margin: 0;
 }
 
+.shopping-cart-item-title,
+.item-info-title,
+.shopping-cart-title,
+.total-price-text {
+    font-size: 1.75rem;
+}
 
+.item-ingredients {
+    color: #8B8B8B;
+    margin: .25em 0 .85em;
+}
 
+.item-price {
+    margin: 0;
+}
 
-
+.item-info h2{
+    margin: 0;
+    padding: 0;
+}
 
 /* HEADER */
 
@@ -51,7 +69,6 @@ h1 {
     flex-direction: column;
     justify-content: center;
     min-height: 120px;
-
     color: white;
 }
 
@@ -64,7 +81,7 @@ h1 {
 .item {
     display: flex;
     align-items: center;
-    padding: 2em 0;
+    padding: 1.5em 0;
     border-bottom: 1px solid grey;
 }
 
@@ -85,14 +102,11 @@ h1 {
     padding-left: 1em;
 }
 
-.item-info * {
-    margin: 0;
-    padding: 0;
-}
+
 
 .add-btn {
     border-radius: 70%;
-    border: 1px solid gray;
+    border: 1px solid #DEDEDE;
     font-size: 1em;
     padding: 1em 1.25em;
     transition: background-color 250ms;
@@ -111,6 +125,7 @@ h1 {
 
 .order {
     padding-bottom: 2em;
+    flex: 1;
 }
 
 .shopping-cart-item {
