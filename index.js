@@ -73,14 +73,14 @@ paymentForm.addEventListener("submit", (e) => {
 
     const formData = new FormData(e.target);
     userName = formData.get('name');
-
+    window.scrollTo(0,0);
     render()
 
     setTimeout(() => {
         paymentIsDone = false
         isFormOn = false
         render()
-    }, 3000)
+    }, 5000)
 })
 
 closeBtn.addEventListener("click", () => {
