@@ -1,6 +1,9 @@
 import { menuArray } from "./data.js";
 
-const order = document.querySelector(".order")
+const shoppingCartTitle= document.querySelector(".shopping-cart-title")
+const completeOrderBtn = document.querySelector(".complete-order-btn")
+const shoppingCart = document.querySelector(".shopping-cart")
+
 const cartArray = []
 
 document.addEventListener("click", (e) => {
@@ -55,8 +58,9 @@ function getHtmlFeed() {
 
 
     if (cartArray.length > 0) {
-        order.style.visibility ="visible"
-        const shoppingCart = document.querySelector(".shopping-cart")
+        completeOrderBtn.style.visibility ="visible"
+        shoppingCartTitle.style.visibility ="visible"
+        shoppingCart.style.visibility ="visible"
         let shoppingCartFeed = ``
         let i = 0
         let totalPrice = 0
@@ -85,8 +89,10 @@ function getHtmlFeed() {
     
 
     } else {
-        
-        order.style.visibility ="hidden"
+        const shoppingCart = document.querySelector(".shopping-cart")
+        shoppingCart.style.visibility ="hidden"
+        completeOrderBtn.style.visibility ="hidden"
+        shoppingCartTitle.style.visibility ="hidden"
     }
     
 }

@@ -20,6 +20,10 @@ body {
     background-color: #F5F5F5;
 }
 
+.page-wrapper {
+    height: 100vh;
+}
+
 /* TYPOGRAPHY */
 
 h1 {
@@ -106,7 +110,6 @@ h1 {
 /* shopping cart */
 
 .order {
-    height: 100%;
     padding-bottom: 2em;
 }
 
