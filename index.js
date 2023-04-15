@@ -73,7 +73,6 @@ paymentForm.addEventListener("submit", (e) => {
 
     const formData = new FormData(e.target);
     userName = formData.get('name');
-    document.body.style.zoom = 1;
     render()
 
     setTimeout(() => {
