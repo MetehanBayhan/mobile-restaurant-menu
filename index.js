@@ -4,24 +4,40 @@ const shoppingCartTitle= document.querySelector(".shopping-cart-title")
 const completeOrderBtn = document.querySelector(".complete-order-btn")
 const shoppingCart = document.querySelector(".shopping-cart")
 const bottomScroll = document.querySelector(".bottom-scroll")
+const paymentScreen = document.querySelector(".payment-screen")
+const paymentForm = document.querySelector("#myForm")
+const order = document.querySelector(".order")
 
-const cartArray = []
+let isFormOn = false
+let paymentIsDone = false
+let cartArray = []
+let userName = ``
 
 document.addEventListener("click", (e) => {
     if (e.target.id.includes("btn-")) {
+        if(isFormOn == true){
+
+        } else {
         handleAddBtn(e.target.id)
+        }
     }
     if (e.target.dataset.item){
-        handleRemovebtn(e.target.dataset.item);
+        if(isFormOn == true){
+
+        } else {
+            handleRemovebtn(e.target.dataset.item);
+        }
+        
+    }
+    if (e.target.className === "complete-order-btn"){
+        handleCompleteOrderBtn()
     }
 })
 
 function handleAddBtn(btnId) {
     for (const item of menuArray) {
         if(btnId == `btn-${item.id}`){
-            console.log("this btn is for: " + item.name);
             cartArray.push(item)
-            console.log(cartArray);
         }
     }
     const y = bottomScroll.getBoundingClientRect().top + window.pageYOffset + bottomScroll.offsetHeight;
@@ -34,11 +50,42 @@ function handleRemovebtn(dataId) {
     if (dataId > -1) {
         cartArray.splice(dataId, 1);
     }
-    if (cartArray.length < 1) {
-        const shoppingCart = document.querySelector(".order")
-    }
     render()
 }
+
+function handleCompleteOrderBtn() {
+    
+    if (cartArray.length > 0){
+        paymentScreen.style.display = "block"
+    }
+    isFormOn = true
+    render()
+}
+
+
+paymentForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    paymentIsDone = true
+    cartArray = []
+    paymentScreen.style.display = "none"
+    hideShoppingCart()
+    const formData = new FormData(e.target);
+    userName = formData.get('name');
+    render()
+})
+
+function hideShoppingCart() {
+    shoppingCart.style.visibility ="hidden"
+    completeOrderBtn.style.visibility ="hidden"
+    shoppingCartTitle.style.visibility ="hidden"
+}
+
+function showShoppingCart() {
+    shoppingCart.style.visibility ="visible"
+    completeOrderBtn.style.visibility ="visible"
+    shoppingCartTitle.style.visibility ="visible"
+}
+
 
 function getHtmlFeed() {
     let feedContainer = document.querySelector(".feed")
@@ -61,9 +108,7 @@ function getHtmlFeed() {
 
 
     if (cartArray.length > 0) {
-        completeOrderBtn.style.visibility ="visible"
-        shoppingCartTitle.style.visibility ="visible"
-        shoppingCart.style.visibility ="visible"
+        showShoppingCart()
         let shoppingCartFeed = ``
         let i = 0
         let totalPrice = 0
@@ -81,7 +126,7 @@ function getHtmlFeed() {
 
         const totalString = `
         <div class="total-price-wrapper">
-            <p class="total-price-text">total-price</p>
+            <p class="total-price-text">Total price:</p>
             <p class="total-price">${totalPrice}$</p>
         </div>
 
@@ -92,10 +137,16 @@ function getHtmlFeed() {
     
 
     } else {
-        const shoppingCart = document.querySelector(".shopping-cart")
-        shoppingCart.style.visibility ="hidden"
-        completeOrderBtn.style.visibility ="hidden"
-        shoppingCartTitle.style.visibility ="hidden"
+        hideShoppingCart()
+    }
+
+    if (paymentIsDone == true) {
+        
+        order.innerHTML = `
+        <div class="successfull">
+            <p class="greetings">Thanks, ${userName}! Your order is on its way!</p>
+        </div>
+        `
     }
     
 }
