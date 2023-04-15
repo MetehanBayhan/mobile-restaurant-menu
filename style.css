@@ -52,9 +52,22 @@ h1 {
     margin: 0;
 }
 
+.item-price,
+.shopping-cart-item-price,
+.total-price {
+    font-size: 1.25rem;
+}
+
 .item-info h2{
     margin: 0;
     padding: 0;
+}
+
+.shopping-cart-item-remove {
+    font-family: Verdana, sans-serif;
+    font-size: .75rem;
+    color: #BBBBBB;
+    cursor: pointer;
 }
 
 /* HEADER */
@@ -110,13 +123,13 @@ h1 {
     font-size: 1em;
     padding: 1em 1.25em;
     transition: background-color 250ms;
+    cursor: pointer;
 
 }
 
 .add-btn:hover,
 .add-btn:focus {
-    background-color: gray;
-    color: white;
+    background-color: white;
 }
 
 
@@ -161,10 +174,12 @@ h1 {
 .total-price-wrapper {
     display: flex;
     border-top: 3px solid black;
+    align-items: center;
+    padding: .3125em 0 1em;
 }
 
 .total-price-wrapper *{
-    margin: .3125em 0 1em;
+    margin: 0;
 }
 
 .total-price {

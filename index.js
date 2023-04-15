@@ -3,6 +3,7 @@ import { menuArray } from "./data.js";
 const shoppingCartTitle= document.querySelector(".shopping-cart-title")
 const completeOrderBtn = document.querySelector(".complete-order-btn")
 const shoppingCart = document.querySelector(".shopping-cart")
+const bottomScroll = document.querySelector(".bottom-scroll")
 
 const cartArray = []
 
@@ -23,7 +24,9 @@ function handleAddBtn(btnId) {
             console.log(cartArray);
         }
     }
-
+    const y = bottomScroll.getBoundingClientRect().top + window.pageYOffset + bottomScroll.offsetHeight;
+    const bodyHeight = document.body.offsetHeight;
+    window.scrollTo({ top: Math.min(y, bodyHeight), behavior: 'smooth' });
     render()
 }
 
@@ -48,7 +51,7 @@ function getHtmlFeed() {
                 <p class="item-logo">${item.emoji}</p>
                 <div class="item-info">
                     <h2 class="item-info-title">${item.name}</h2>
-                    <p class="item-ingredients">${item.ingredients}</p>
+                    <p class="item-ingredients">${item.ingredients.join(", ")}</p>
                     <p class="item-price">${item.price}$</p>
                 </div>
                 <button class="add-btn"  id="btn-${item.id}">+</button>
