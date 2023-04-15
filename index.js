@@ -6,7 +6,7 @@ const shoppingCart = document.querySelector(".shopping-cart")
 const bottomScroll = document.querySelector(".bottom-scroll")
 const paymentScreen = document.querySelector(".payment-screen")
 const paymentForm = document.querySelector("#myForm")
-const order = document.querySelector(".order")
+const closeBtn = document.querySelector(".close-btn")
 
 let isFormOn = false
 let paymentIsDone = false
@@ -66,24 +66,42 @@ function handleCompleteOrderBtn() {
 paymentForm.addEventListener("submit", (e) => {
     e.preventDefault();
     paymentIsDone = true
+    
     cartArray = []
     paymentScreen.style.display = "none"
     hideShoppingCart()
+
     const formData = new FormData(e.target);
     userName = formData.get('name');
+
     render()
+
+    setTimeout(() => {
+        paymentIsDone = false
+        isFormOn = false
+        render()
+    }, 3000)
+})
+
+closeBtn.addEventListener("click", () => {
+    paymentScreen.style.display = "none"
+
+    paymentIsDone = false
+    isFormOn = false
+    render()
+
 })
 
 function hideShoppingCart() {
-    shoppingCart.style.visibility ="hidden"
-    completeOrderBtn.style.visibility ="hidden"
-    shoppingCartTitle.style.visibility ="hidden"
+    shoppingCart.style.display ="none"
+    completeOrderBtn.style.display ="none"
+    shoppingCartTitle.style.display ="none"
 }
 
 function showShoppingCart() {
-    shoppingCart.style.visibility ="visible"
-    completeOrderBtn.style.visibility ="visible"
-    shoppingCartTitle.style.visibility ="visible"
+    shoppingCart.style.display ="block"
+    completeOrderBtn.style.display ="block"
+    shoppingCartTitle.style.display ="block"
 }
 
 
@@ -141,8 +159,8 @@ function getHtmlFeed() {
     }
 
     if (paymentIsDone == true) {
-        
-        order.innerHTML = `
+        shoppingCart.style.display = "block"
+        shoppingCart.innerHTML = `
         <div class="successfull">
             <p class="greetings">Thanks, ${userName}! Your order is on its way!</p>
         </div>
