@@ -1,7 +1,7 @@
 import { menuArray } from "./data.js";
 
 const shoppingCartTitle= document.querySelector(".shopping-cart-title")
-const completeOrderBtn = document.querySelector(".complete-order-btn")
+const completeOrderBtn = document.querySelector(".complete-order-btn.btn")
 const shoppingCart = document.querySelector(".shopping-cart")
 const bottomScroll = document.querySelector(".bottom-scroll")
 const paymentScreen = document.querySelector(".payment-screen")
@@ -29,7 +29,7 @@ document.addEventListener("click", (e) => {
         }
         
     }
-    if (e.target.className === "complete-order-btn"){
+    if (e.target.className === "complete-order-btn btn"){
         handleCompleteOrderBtn()
     }
 })

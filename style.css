@@ -32,6 +32,18 @@ input {
     padding: .75em 1em;
 }
 
+
+.btn {
+    display: block; 
+    width: 100%;
+    border: none;
+    background: #16DB99;
+    color: white;
+    padding: 1em 0;
+    border-radius: 3px;
+    font-weight: bold;
+    border-color: #757575;
+}
 /* TYPOGRAPHY */
 
 h1 {
@@ -171,14 +183,7 @@ h1 {
 }
 
 .complete-order-btn {
-    display: block;
-    width: 100%;
-    border: none;
-    background: #16DB99;
-    color: white;
-    padding: 1em 0;
-    border-radius: 3px;
-    font-weight: bold;
+    width: 100%
 }
 
 .total-price-wrapper {
@@ -226,14 +231,6 @@ h1 {
 }
 
 .pay-btn {
-    display: block; 
-    width: 100%;
-    border: none;
-    background: #16DB99;
-    color: white;
-    padding: 1em 0;
-    border-radius: 3px;
-    font-weight: bold;
     border-color: #757575;
 }
 
